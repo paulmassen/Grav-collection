@@ -32,6 +32,27 @@ A collection of useful Grav templates
 
 ### Basic AMP Page
 
+#### Configuration
+
+In Configuration -> Media , add a file extension and fill fields as below:
+
+File Extension: amp
+Type: file
+Thumb: media/thumb-amp.png
+Mime Type: text/html
+Image options: 
+
+
+In your base.html.twig, add
+
+```
+{% if page.template == "YOURTEMPLATE" %}
+        <link rel="amphtml" href="{{page.url}}.amp">
+{% endif %}
+```
+
+Then, you can create partials/base.amp.twig
+
 ```
 <!doctype html>
 <html amp lang="fr">
