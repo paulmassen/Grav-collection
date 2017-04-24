@@ -1,6 +1,34 @@
 # Grav-collection
 A collection of useful Grav templates
 
+### Add a CSS or JS file on a specific page
+
+If on your base.html.twig you have all your javascripts assets inside a javascripts block like below:
+
+```
+	    {% block javascripts %}
+        {% do assets.addJs('theme://js/jquery.js', 91) %}
+        {% endblock %}
+        {{ assets.js() }}
+```
+
+Let's say you want to add a "gallery.js" file on your "Portfolio Gallery" page. 
+You can add a javascript file from your template by editing your template portfolio-gallery.html.twig and add:
+`{{ parent() }}` inside your block.
+```
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+        {{ page.content }}
+    </section>
+
+{% endblock %}
+{% block javascripts %}
+     {% do assets.addJs('theme://js/myportfolioscript.js', 100) %}
+     {{ parent() }}
+{% endblock %}
+```
+
 ### Schema.org microdata for article page
 ```
     <script type="application/ld+json">
