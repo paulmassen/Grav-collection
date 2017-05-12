@@ -1,6 +1,17 @@
 # Grav-collection
 A collection of useful Grav templates
 
+### Setup Cloud9 for running Grav
+
+After launching a new workspace, you will need to run these commands before getting started:
+
+```
+sudo apt-get update
+sudo apt-get install php5-common libapache2-mod-php5 php5-cli php5-curl
+bin/grav install 
+bin/gpm install admin
+```
+
 ### Add a CSS or JS file on a specific page
 
 If on your base.html.twig you have all your javascripts assets inside a javascripts block like below:
@@ -19,9 +30,7 @@ You can add a javascript file from your template by editing your template portfo
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-        {{ page.content }}
-    </section>
-
+  {{ page.content }}
 {% endblock %}
 {% block javascripts %}
      {% do assets.addJs('theme://js/myportfolioscript.js', 100) %}
