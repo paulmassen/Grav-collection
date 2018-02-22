@@ -66,6 +66,36 @@ You can add a javascript file from your template by editing your template portfo
       }
     </script>
 ```
+Note: Microdata has been added to my SEO plugin: https://github.com/paulmassen/grav-plugin-seo
+
+### VSCode Snippet for blueprint generation
+
+```
+{"blueprint-extend": {
+	"prefix": "yaml",
+	"body": [
+	  "title: MyTitle",
+	  "'@extends':",
+	  "    type: default",
+	  "    context: blueprints://pages",
+	  "",
+	  "form:",
+	  "  fields:",
+	  "    tabs:",
+	  "      fields:",
+	  "        content:",
+	  "          fields:",
+	  "            content:",
+	  "                unset@: true",
+	  "            header.myfield:",
+	  "              type: text",
+	  "              label: My Label"
+	],
+	"description": "New Extends Blueprint"
+  }
+}
+
+```
 
 ### Basic AMP Page
 
